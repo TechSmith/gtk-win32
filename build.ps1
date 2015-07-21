@@ -113,7 +113,7 @@ param (
 	$PatchesRootDirectory = "$BuildDirectory\github\gtk-win32",
 
 	[string]
-	$VSInstallPath = 'C:\Program Files (x86)\Microsoft Visual Studio 12.0',
+	$VSInstallPath = 'C:\Program Files (x86)\Microsoft Visual Studio 14.0',
 
 	[string]
 	$CMakePath = 'C:\Program Files (x86)\CMake\bin',
@@ -1138,6 +1138,14 @@ $items.GetEnumerator() | %{
 
 		Copy-Item "$($item.PatchDirectory)\*" $item.BuildDirectory -Recurse -Force
 		"Copied patch contents from $($item.PatchDirectory) to $($item.BuildDirectory)"
+
+		Push-Location $item.BuildDirectory
+		Get-ChildItem -Recurse *.vcxproj | %{
+			$contents = Get-Content $_.FullName
+			$contents = $contents -replace '<PlatformToolset>v120</PlatformToolset>', '<PlatformToolset>v140</PlatformToolset>'
+			$contents | Out-File -LiteralPath $_.FullName -Encoding utf8
+		}
+		Pop-Location
 	})
 }
 
