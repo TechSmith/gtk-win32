@@ -490,6 +490,7 @@ $items['glib'].BuildScript = {
 	Exec $patch -p1 -i g-win32-command-line-2.patch
 	Exec $patch -p1 -i 0001-Change-message-system-to-use-fputs-instead-of-write.patch
 	Exec $patch -p1 -i Add-gsystemthreadsetname-implementation-for-W32-th.patch
+	Exec $patch -p1 -i gobject-init-ctor.patch
 
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
 
