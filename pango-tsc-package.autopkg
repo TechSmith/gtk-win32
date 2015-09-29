@@ -1,0 +1,141 @@
+configurations
+{
+   Toolset {
+      key : "PlatformToolset";
+      choices: { v140 };
+   };
+}
+
+
+nuget 
+{
+   nuspec
+   {
+      id = pango-tsc-package;
+      version: 4.0.0;
+      title: Pango Library;
+      authors: { TechSmith Corporation, GNU };
+      owners: { TechSmith Corporation };
+      licenseUrl: "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html";
+      projectUrl: "https://github.com/nice-software/gtk-win32";
+      iconUrl: "http://www.techsmith.com/favicon.ico";
+      requireLicenseAcceptance: false;
+      summary: GTK Libraries 3.14.11;      
+      releaseNotes: "license issue";
+      description: @"Third party cross-platform library containing pre-built libs for pango and its dependencies of cairo, fontconfig, freetype, and other GTK libs
+         New features:
+         Breaking Changes:
+            4.0.0: Updated to Visual Studio 2015";
+      copyright: "";
+      tags: { native, tsc, pango, cairo, fontconfig, freetype };
+   };
+
+   files 
+   {
+      cairoInclude: { #destination = ${d_include}cairo; build\Win32\cairo\src\**\*.c; 
+                                                        build\Win32\cairo\src\**\*.h; };
+
+      PangoInclude: { #destination = ${d_include}pango; build\Win32\pango\pango\*.h; 
+                                                        build\Win32\pango\pango\*.c; };
+
+      freetypeInclude: { #destination = ${d_include}freetype;     build\Win32\freetype\include\**\*.h;};
+      freetypeSrc:     { #destination = ${d_include}freetype\src; build\Win32\freetype\src\**; };   
+         
+      fontconfigInclude: { #destination = ${d_include}fontconfig;     build\Win32\fontconfig\fontconfig\** };
+      fontconfigSrc:     { #destination = ${d_include}fontconfig\src; build\Win32\fontconfig\src\** };
+
+      glibInclude:    { #destination = ${d_include}glib;    build\Win32\glib\glib\**;   };    
+      gobjectInclude: { #destination = ${d_include}gobject; build\Win32\glib\gobject\**;   };    
+													  
+      Include: { #destination = ${d_include}; build\Win32\cairo\msvc\vc12\Release_FC\Win32\include\*.h;
+                                              build\Win32\glib\glib\glib.h;
+                                              build\Win32\glib\glib\glibconfig.h;
+                                              build\Win32\glib\glib\glib-object.h; 
+                                              build\Win32\freetype\include\**\*.h;	};           
+													  
+      ("Win32,x64", "v140") =>
+      {
+         [${0}, ${1}]
+         {
+            lib:   { gtk\${0}\lib\cairo.lib;
+                     gtk\${0}\lib\cairo-gobject.lib;
+                     gtk\${0}\lib\fontconfig.lib;
+                     gtk\${0}\lib\freetype.lib;
+                     gtk\${0}\lib\gio-2.0.lib;
+                     gtk\${0}\lib\glib-2.0.lib;
+                     gtk\${0}\lib\gmodule-2.0.lib;
+                     gtk\${0}\lib\gobject-2.0.lib;
+                     gtk\${0}\lib\gthread-2.0.lib;
+                     gtk\${0}\lib\harfbuzz.lib;
+                     gtk\${0}\lib\iconv.lib;
+                     gtk\${0}\lib\libffi.lib;
+                     gtk\${0}\lib\libintl.lib;
+                     gtk\${0}\lib\libpng16.lib;
+                     gtk\${0}\lib\libxml2.lib;
+                     gtk\${0}\lib\pango-1.0.lib;
+                     gtk\${0}\lib\pangocairo-1.0.lib;
+                     gtk\${0}\lib\pangoft2-1.0.lib;
+                     gtk\${0}\lib\pangowin32-1.0.lib;
+                     gtk\${0}\lib\pixman-1.lib;
+                     gtk\${0}\lib\zlib1.lib;
+                   }
+
+            bin:   { gtk\${0}\bin\cairo.dll;
+                     gtk\${0}\bin\cairo-gobject.dll;
+                     gtk\${0}\bin\fontconfig.dll;
+                     gtk\${0}\bin\gio-2.0.dll;
+                     gtk\${0}\bin\glib-2.0.dll;
+                     gtk\${0}\bin\gmodule-2.0.dll;
+                     gtk\${0}\bin\gobject-2.0.dll;
+                     gtk\${0}\bin\gthread-2.0.dll;
+                     gtk\${0}\bin\harfbuzz.dll;
+                     gtk\${0}\bin\iconv.dll;
+                     gtk\${0}\bin\libintl.dll;
+                     gtk\${0}\bin\libpng16.dll;
+                     gtk\${0}\bin\libxml2.dll;
+                     gtk\${0}\bin\pango-1.0.dll;
+                     gtk\${0}\bin\pangocairo-1.0.dll;
+                     gtk\${0}\bin\pangoft2-1.0.dll;
+                     gtk\${0}\bin\pangowin32-1.0.dll;
+                     gtk\${0}\bin\pixman-1.dll;
+                     gtk\${0}\bin\zlib1.dll;
+
+                     gtk\${0}\bin\cairo.pdb;
+                     gtk\${0}\bin\cairo-gobject.pdb;
+                     gtk\${0}\bin\fontconfig.pdb;
+                     gtk\${0}\bin\gio-2.0.pdb;
+                     gtk\${0}\bin\glib-2.0.pdb;
+                     gtk\${0}\bin\gmodule-2.0.pdb;
+                     gtk\${0}\bin\gobject-2.0.pdb;
+                     gtk\${0}\bin\gthread-2.0.pdb;
+                     gtk\${0}\bin\harfbuzz.pdb;
+                     gtk\${0}\bin\libpng16.pdb;
+                     gtk\${0}\bin\libxml2.pdb;
+                     gtk\${0}\bin\pango.pdb;
+                     gtk\${0}\bin\pangocairo.pdb;
+                     gtk\${0}\bin\pangoft2.pdb;
+                     gtk\${0}\bin\pangowin32.pdb;
+                     gtk\${0}\bin\pixman.pdb;
+                     gtk\${0}\bin\zlib1.pdb;
+                   }
+         };
+      };
+   };
+
+   props {
+      // Additional declarations to insert into consuming projects before most of the
+      // project settings. (These may be modified in visual studio by a developer
+      // consuming this package.)
+      // This node is typically not needed for most packages and may be omitted.
+   }
+
+   targets {
+      // Additional declarations to insert into consuming projects after most of the
+      // project settings. (These may NOT be modified in visual studio by a developer
+      // consuming this package.)
+      // This node is often used to set defines that are required that must be set by
+      // the consuming project in order to correctly link to the libraries in this
+      // package.  Such defines may be set either globally or only set under specific
+      // conditions.
+    }
+}
