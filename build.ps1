@@ -352,7 +352,7 @@ $items['fontconfig'].BuildScript = {
 	Get-ChildItem "$PWD" -Filter *.vcxproj | `
 	Foreach-Object{
 		$file = $_.FullName
-		(Get-Content $file | ForEach-Object { $_ -replace "<PlatformToolset>FIXME</PlatformToolset>", "<PlatformToolset>v${VSVer}0</PlatformToolset>" } ) | Set-Content $file
+		(Get-Content $file | ForEach-Object { $_ -replace "<PlatformToolset>FIXME</PlatformToolset>", "<PlatformToolset>v140</PlatformToolset>" } ) | Set-Content $file
 	}
 
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
@@ -567,7 +567,7 @@ $items['harfbuzz'].BuildScript = {
 	Get-ChildItem "$PWD\win32" -Filter *.vcxproj | `
 	Foreach-Object{
 		$file = $_.FullName
-		(Get-Content $file | ForEach-Object { $_ -replace "<PlatformToolset>FIXME</PlatformToolset>", "<PlatformToolset>v${VSVer}0</PlatformToolset>" } ) | Set-Content $file
+		(Get-Content $file | ForEach-Object { $_ -replace "<PlatformToolset>FIXME</PlatformToolset>", "<PlatformToolset>v140</PlatformToolset>" } ) | Set-Content $file
 	}
 
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
