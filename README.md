@@ -1,3 +1,9 @@
+##Update by Techsmith:
+
+Fontconfig has been updated to version 2.11.1
+
+------------------------------------------------------------
+
 Here you can download a GTK+ 2 bundle (and a few additional libraries) built with Visual Studio 2013. HexChat for Windows is built using this bundle.
 
 
