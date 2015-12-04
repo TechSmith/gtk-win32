@@ -270,6 +270,8 @@ $items['atk'].BuildScript = {
 $items['cairo'].BuildScript = {
 	$packageDestination = "$PWD-rel"
 	Remove-Item -Recurse $packageDestination -ErrorAction Ignore
+	
+	Exec $patch -p1 -i cairo.patch
 
 	$originalEnvironment = Swap-Environment $vcvarsEnvironment
 
