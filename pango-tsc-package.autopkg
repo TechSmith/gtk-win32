@@ -3,7 +3,7 @@ nuget
    nuspec
    {
       id = pango-tsc-package;
-      version: 5.0.0;
+      version: 5.0.1.0;
       title: Pango Library;
       authors: { TechSmith Corporation, GNU };
       owners: { TechSmith Corporation };
@@ -12,8 +12,11 @@ nuget
       iconUrl: "http://www.techsmith.com/favicon.ico";
       requireLicenseAcceptance: false;
       summary: GTK Libraries 3.22.20;
-	  releaseNotes: "license issue";
-      description: @"Third party cross-platform library containing pre-built libs for pango and its dependencies of cairo, fontconfig, freetype, and other GTK libs";
+      description: @"Third party cross-platform library containing pre-built libs for pango and its dependencies of cairo, fontconfig, freetype, and other GTK libs
+         New Features:
+         Breaking Changes:
+         Bug Fixes:
+            5.0.1.0: Update dll version information for libpng16.dll so upgrades work properly";
       copyright: "";
       tags: { native, tsc, pango, cairo, fontconfig, freetype };
    };  
