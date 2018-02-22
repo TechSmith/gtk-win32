@@ -48,3 +48,15 @@ HexChat developers decided that their script should focus on their specific need
     ```
 
 1. When the script is done, your GTK+ stack will be found under _C:\gtk-build\gtk_. Enjoy!
+
+## TechSmith Notes
+
+This is where our Pango build comes from, look at the ThirdParty-Windows-Pango project on the build server for more information. You can also build Pango locally by installing all the tools listed above, then running the following Powershell commands:
+
+**64 bit**
+
+C:\msys64\usr\bin\bash.exe -i -c "/c/Python36/Python.exe build.py build -p x64 --vs-ver 14 pango"
+
+**32 bit**
+
+C:\msys64\usr\bin\bash.exe -i -c "/c/Python36/Python.exe build.py build -p x86 --vs-ver 14 pango"
