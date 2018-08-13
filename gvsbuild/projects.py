@@ -174,7 +174,7 @@ class Project_enchant(Tarball, Project):
     def __init__(self):
         Project.__init__(self,
             'enchant',
-            archive_url = 'http://dl.hexchat.net/gtk-win32/src/enchant-1.6.0.tar.gz',
+            archive_url = 'https://dl.hexchat.net/gtk-win32/src/enchant-1.6.0.tar.gz',
             hash = '2fac9e7be7e9424b2c5570d8affe568db39f7572c10ed48d4e13cddf03f7097f',
             dependencies = ['glib'],
             )
@@ -356,7 +356,7 @@ class Project_glib(Tarball, Project):
     def __init__(self):
         Project.__init__(self,
             'glib',
-            archive_url = 'http://ftp.acc.umu.se/pub/GNOME/sources/glib/2.52/glib-2.52.2.tar.xz',
+            archive_url = 'https://ftp.osuosl.org/pub/blfs/conglomeration/glib/glib-2.52.2.tar.xz',
             hash = 'f00e5d9e2a2948b1da25fcba734a6b7a40f556de8bc9f528a53f6569969ac5d0',
             dependencies = ['gettext', 'libffi', 'zlib'],
             patches = ['glib-if_nametoindex.patch',
@@ -709,7 +709,7 @@ class Project_libffi(Tarball, Project):
     def __init__(self):
         Project.__init__(self,
             'libffi',
-            archive_url = 'http://dl.hexchat.net/gtk-win32/src/libffi-3.2.1.tar.gz',
+            archive_url = 'https://www.mirrorservice.org/sites/sourceware.org/pub/libffi/libffi-3.2.1.tar.gz',
             hash = 'd06ebb8e1d9a22d19e38d63fdb83954253f39bedc5d46232a05645685722ca37',
             patches = ['libffi-msvc-complex.patch', 'libffi-win64-jmp.patch', '0001-Fix-build-on-windows.patch'],
             )
@@ -1152,7 +1152,7 @@ class Project_pango(Tarball, Project):
     def __init__(self):
         Project.__init__(self,
             'pango',
-            archive_url = 'http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.40/pango-1.40.5.tar.xz',
+            archive_url = 'https://ftp.osuosl.org/pub/blfs/conglomeration/pango/pango-1.40.5.tar.xz',
             hash = '24748140456c42360b07b2c77a1a2e1216d07c056632079557cd4e815b9d01c9',
             dependencies = ['cairo', 'harfbuzz'],
             )
@@ -1276,7 +1276,7 @@ class Project_win_iconv(Tarball, CmakeProject):
     def __init__(self):
         Project.__init__(self,
             'win-iconv',
-            archive_url = 'http://dl.hexchat.net/gtk-win32/src/win-iconv-0.0.8.tar.gz',
+            archive_url = 'https://dl.hexchat.net/gtk-win32/src/win-iconv-0.0.8.tar.gz',
             hash = '23adea990a8303c6e69e32a64a30171efcb1b73824a1c2da1bbf576b0ae7c520',
             dependencies = ['cmake', 'ninja', ],
             )
