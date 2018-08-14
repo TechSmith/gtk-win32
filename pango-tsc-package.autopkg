@@ -3,7 +3,7 @@
    nuspec
    {
       id = pango-tsc-package;
-      version: 5.0.1.0;
+      version: 5.1.0.0;
       title: Pango Library;
       authors: { TechSmith Corporation, GNU };
       owners: { TechSmith Corporation };
@@ -14,6 +14,7 @@
       summary: GTK Libraries 3.22.20;
       description: @"Third party cross-platform library containing pre-built libs for pango and its dependencies of cairo, fontconfig, freetype, and other GTK libs
          New Features:
+            5.1.0.0: Updates for Visual Studio 2017
          Breaking Changes:
          Bug Fixes:
             5.0.1.0: Update dll version information for libpng16.dll so upgrades work properly";

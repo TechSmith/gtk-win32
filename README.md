@@ -55,8 +55,8 @@ This is where our Pango build comes from, look at the ThirdParty-Windows-Pango p
 
 **64 bit**
 
-C:\msys64\usr\bin\bash.exe -i -c "/c/Python36/Python.exe build.py build -p x64 --vs-ver 14 pango"
+Invoke-Expression "C:\Python36\python.exe <your_repo_location>\build.py build --build-dir <your_repo_location> -p x86 --vs-ver 15 --vs-install-path `"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise`" pango"
 
 **32 bit**
 
-C:\msys64\usr\bin\bash.exe -i -c "/c/Python36/Python.exe build.py build -p x86 --vs-ver 14 pango"
+Invoke-Expression "C:\Python36\python.exe <your_repo_location>\build.py build --build-dir <your_repo_location> -p x64 --vs-ver 15 --vs-install-path `"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise`" pango"
