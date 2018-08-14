@@ -338,6 +338,7 @@ class Project_gettext(Tarball, Project):
             hash = '5386d2a40500295783c6a52121adcf42a25519e2d23675950619c9e69558c23f',
             dependencies = ['win-iconv'],
             patches = ['0001-gettext-runtime-Add-pre-configured-headers-for-MSVC-.patch',
+                       '0001-gettext-runtime-rename-memmove.patch',
                        '0001-gettext-tools-Add-pre-configured-headers-and-sources.patch',
                        '0001-gettext-tools-gnulib-lib-libxml-Check-for-_WIN32-as-.patch',
                        '0001-gettext-tools-Make-private-headers-C-friendly.patch',
