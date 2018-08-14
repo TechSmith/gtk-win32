@@ -334,7 +334,7 @@ class Project_gettext(Tarball, Project):
     def __init__(self):
         Project.__init__(self,
             'gettext',
-            archive_url = 'http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.7.tar.gz',
+            archive_url = 'http://mirrors.kernel.org/gnu/gettext/gettext-0.19.7.tar.gz',
             hash = '5386d2a40500295783c6a52121adcf42a25519e2d23675950619c9e69558c23f',
             dependencies = ['win-iconv'],
             patches = ['0001-gettext-runtime-Add-pre-configured-headers-for-MSVC-.patch',
@@ -767,7 +767,7 @@ class Project_libmicrohttpd(Tarball, Project):
     def __init__(self):
         Project.__init__(self,
             'libmicrohttpd',
-             archive_url = 'http://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.54.tar.gz',
+             archive_url = 'http://mirrors.kernel.org/gnu/libmicrohttpd/libmicrohttpd-0.9.54.tar.gz',
              hash = 'bcc721895d4a114b0548a39d2241c35caacb9e2e072d40e11b55c60e3d5ddcbe',
              patches = ['001-remove-postsample.patch'],
             )
